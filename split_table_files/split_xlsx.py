@@ -13,9 +13,6 @@ while not success:
         print('Error - not a valid number. Please type a number and press Enter:')
         input_s = input()
 
-# # path to the dir of this python script
-# path = os.path.dirname(os.path.realpath(__file__))
-
 # determine if application is a script file or frozen exe
 if getattr(sys, 'frozen', False):
     path = os.path.dirname(sys.executable)
@@ -35,7 +32,3 @@ for file in files:
     for i in range(0, len(df), n):
         df[i:i+n].to_excel(f'{path}/{file}_{i}.xlsx', index=False, header=True)
         print(f'{path}/{file}_{i}.xlsx, length = {len(df[i:i+n])}')
-    # df = pd.read_csv(f'{path}/{file}')
-    # for i in range(0, len(df), n):
-    #     df[i:i+n].to_csv(f'{path}/{file}_{i}.csv', index=False)
-    #     print(f'{path}/{file}_{i}.csv, length = {len(df[i:i+n])}')
